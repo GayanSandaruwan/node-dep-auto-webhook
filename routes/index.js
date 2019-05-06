@@ -13,7 +13,8 @@ var githubUsername = 'gayansandaruwan'
 router.post("/webhooks/github", function (req, res) {
     var sender = req.body.sender;
     var branch = req.body.ref;
-
+    console.log(sender);
+    console.log(branch);
     if(branch.indexOf('master') > -1 && sender.login === githubUsername){
         deploy(res);
     }
